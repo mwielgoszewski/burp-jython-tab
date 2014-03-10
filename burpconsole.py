@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
-ui
-~~
+burpconsole
+~~~~~~~~~~~
 
 This module provides a Jython Interpreter Console Tab to Burp.
 '''
@@ -29,10 +29,14 @@ class BurpExtender(IBurpExtender, IContextMenuFactory, ITab):
         self.callbacks = callbacks
         self.helpers = callbacks.helpers
 
+        self.console = Console(self, namespace={
+            'callbacks': callbacks,
+            'helpers': callbacks.helpers,
+            })
+
         self.scrollpane = JScrollPane()
-        self.console = Console(self)
         self.scrollpane.setViewportView(self.console.textpane)
-        
+
         callbacks.setExtensionName("Jython Console")
         callbacks.addSuiteTab(self)
         callbacks.registerContextMenuFactory(self)
