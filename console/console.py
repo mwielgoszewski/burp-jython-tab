@@ -266,10 +266,10 @@ class JythonInterpreter(InteractiveInterpreter):
         preProperties = System.getProperties()
         postProperties = Properties()
 
-        console.callbacks.getStdout().write('initializing interpreter with postProperties: %r\n' % (
+        console.callbacks.getStdout().write('Initializing interpreter with postProperties: %r\n' % (
             postProperties, ))
 
-        console.callbacks.getStdout().write('initializing interpreter with preProperties: %r\n' % (
+        console.callbacks.getStdout().write('Initializing interpreter with preProperties: %r\n' % (
             postProperties, ))
 
         InteractiveInterpreter.initialize(preProperties, postProperties, args)
