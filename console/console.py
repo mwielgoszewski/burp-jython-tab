@@ -18,14 +18,12 @@ from java.util import Properties
 
 from org.python.util import InteractiveInterpreter
 
-import sys
-
 from history import History
 
 
 class Console(object):
-    PS1 = sys.ps1
-    PS2 = sys.ps2
+    PS1 = '>>> '
+    PS2 = '... '
 
     def __init__(self, extender, namespace=None):
         self.extender = extender
